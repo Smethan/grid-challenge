@@ -26,31 +26,26 @@ header {
   grid-area: header;
   color: white;
   background-color: black;
-  height: 1fr;
 }
 
 nav {
   grid-area: nav;
   background-color: bisque;
-  height: 1fr;
 }
 
 aside {
   grid-area: aside;
   background-color: orange;
-  height: 5fr;
 }
 
 main {
   grid-area: main;
   background-color: #f1f1f1;
-  height: 4fr;
 }
 
 footer {
   grid-area: footer;
   background-color: black;
-  height: 1fr;
   color: white;
 }
 

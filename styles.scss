@@ -8,15 +8,21 @@
 
  body {
     display: grid;
-    grid-template-areas: "header header header header" "aside nav nav nav" "aside main main main" "footer footer footer footer";
+    //I don't think I need this many grid areas, could realistically make it only 3 areas, but I'm still learning.
+    grid-template-areas: 
+    "header header header header" 
+    "aside nav nav nav" 
+    "aside main main main" 
+    "footer footer footer footer";
     grid-gap: 10px;
+    //I think this is necessary, honestly don't really know
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 0.5fr 1fr 3fr 0.5fr;
     height: 100vh;
     text-align: center;
  }
 
-
+//This is royally scuffed and is a horrible way to center everything, I really wish sass had better variables
 header,nav,aside,main,footer {
    display: grid;
    justify-content: center;
@@ -27,45 +33,43 @@ header,nav,aside,main,footer {
     grid-area: header;
     color: white;
     background-color: black;
-    height: 1fr;
  }
 
  nav {
     grid-area: nav;
     background-color:bisque;
-    height: 1fr;
  }
 
  aside {
     grid-area: aside;
     background-color: orange;
-    height: 5fr;
  }
 
  main {
     grid-area: main;
     background-color: #f1f1f1;
-    height: 4fr;
  }
 
  footer {
     grid-area: footer;
     background-color: black;
-    height: 1fr;
     color: white;
  }
 
  @media screen and ( max-width: 768px) {
-    body {
+    
+   //Note to self: Would be better to just use normal column and row values rather than grid-area for this, it looks
+   //like a mess and required a lot of extra style rewriting (maybe, due to having to redo grid-column-start and end could still be more efficient)
+   body {
       grid-template-columns: 1fr;
-      grid-template-areas: "header header header" "nav nav nav" "main main main" "footer footer footer";
+      grid-template-areas: 
+      "header header header" 
+      "nav nav nav" 
+      "main main main" 
+      "footer footer footer";
     }
-
-   //  header,nav,main,footer {
-   //    grid-column-start: 1;
-   //    grid-column-end: 2;
-   //  }
-
+    //Hide aside for mobile, I do both display and visibility changes for the sake of thoroughness
+    //If only this removed its columns from the grid area as well, then I wouldn't have to write so much
     aside {
       display: none;
       visibility: hidden;
