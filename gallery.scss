@@ -5,6 +5,8 @@
     font-family: sans-serif;
 }
 
+//main grid defined through grid-area, I think I can leave out the height with my auto sizing setup
+
 body {
     display: grid;
     grid-template-areas: 
@@ -17,6 +19,9 @@ body {
     text-align: center;
 }
 
+//might not be strictly necessary to do this, it is done exclusively for centering text non-destructively
+
+
 header,nav,aside,main,footer {
     display: grid;
     justify-content: center;
@@ -26,6 +31,9 @@ header,nav,aside,main,footer {
 header {
     grid-area: header;
 }
+
+//navbar is a bit messy, gets changed for mobile by switching around the row and hiding itself
+//very messy, probably unnecessary, but I did it for safety
 
 nav {
     grid-area: nav;
@@ -59,6 +67,10 @@ nav {
     }
 }
 
+//This thing is pretty much the entire responsive image grid
+//the grid-template-columns uses the repeat() function which makes enough columns to fit the screen
+//And then the medium large and full classes are to size image by defining the end of the rows
+//the @media tage just spans the image across the whole screen
 
 main {
     grid-area: main;
@@ -99,6 +111,7 @@ main {
     
 }
 
+//mobile view, hides navbar and replaces it with the hamburger
 @media screen and (max-width: 768px) {
     nav {
         .navbar {
