@@ -20,6 +20,8 @@
     grid-template-rows: 0.5fr 1fr 3fr 0.5fr;
     height: 100vh;
     text-align: center;
+    background-color: #e52670;
+    color: white;
  }
 
 //This is royally scuffed and is a horrible way to center everything, I really wish sass had better variables
@@ -31,29 +33,27 @@ header,nav,aside,main,footer {
 
  header {
     grid-area: header;
-    color: white;
     background-color: black;
  }
 
  nav {
     grid-area: nav;
-    background-color:bisque;
+    background-color:#F7AF6A;
  }
 
  aside {
     grid-area: aside;
-    background-color: orange;
+    background-color: #E66E1A;
  }
 
  main {
     grid-area: main;
-    background-color: #f1f1f1;
+    background-color: #c4c4c4;
  }
 
  footer {
     grid-area: footer;
     background-color: black;
-    color: white;
  }
 
  @media screen and ( max-width: 768px) {
